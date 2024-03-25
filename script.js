@@ -21,6 +21,11 @@ document.addEventListener("DOMContentLoaded", () => {
       // Fetches current weather data from the OpenWeatherMap API.
       fetch(url)
         .then((response) => response.json())
+        // The data parameter represents the response received from the OpenWeatherMap API after making a 
+        // successful HTTP request using the fetch() method. This response typically contains JSON-formatted 
+        // weather data, including information such as temperature, humidity, wind speed, and weather descriptions.
+        // The data parameter is used as input to the callback function defined within the .then() method. Within this function, 
+        // the code processes and extracts relevant information from the data object to update the weather display on the webpage.
         .then((data) => {
           // Extracts relevant weather information from the retrieved data.
           const { name, main, weather, wind } = data;
@@ -67,7 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
             // console.log("Forecast Day : " + forecastDateTime.toLocaleDateString("en-US", { weekday: "long" }));
 
             forecastCard.innerHTML = `
-              <div class="card">
+              <div class="card bg-secondary text-light">
                 <div class="card-body">
                   <h5 class="card-title">${forecastDateTime.toLocaleDateString("en-US",{ weekday: "long" })} ${forecastDateTime.toLocaleDateString({ weekday: "long" })}</h5>
                   <p class="card-text">Forecast Time : ${forecastDateTime.toLocaleTimeString("en-US",{ hour: "numeric" })}</p>

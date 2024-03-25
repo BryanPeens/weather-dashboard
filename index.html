@@ -5,19 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App</title>
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <!-- Bootstrap Icons CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-
     <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
     <header class="bg-primary">
         <ul class="nav justify-content-center pt-3">
             <li class="nav-item">
-                <h1>Weather Dashboard</h1>
+                <h1 class="text-light">Weather Dashboard</h1>
             </li>
         </ul>
     </header>
@@ -27,11 +26,22 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="mb-3">
+                            <h2 class="text-center" >Search Weather By City Name</h2>
                             <input id="locationInput" class="form-control" placeholder="Enter Location / City" type="text">
                             <button id="searchButton" class="w-100 btn btn-primary mt-2" type="button">
                                 <i class="bi bi-search"></i> <!-- Bootstrap Search Icon -->
                                 Search
                             </button>
+                            <div class="list-group mt-3 text-center">
+                                <a href="#" class="list-group-item list-group-item-action">Atlanta</a>
+                                <a href="#" class="list-group-item list-group-item-action mt-2">Denver</a>
+                                <a href="#" class="list-group-item list-group-item-action mt-2">Seatle</a>
+                                <a href="#" class="list-group-item list-group-item-action mt-2">San Francisco </a>
+                                <a href="#" class="list-group-item list-group-item-action mt-2">Orlando</a>
+                                <a href="#" class="list-group-item list-group-item-action mt-2">New York</a>
+                                <a href="#" class="list-group-item list-group-item-action mt-2">Chicago</a>
+                                <a href="#" class="list-group-item list-group-item-action mt-2">Austin</a>
+                              </div>
                         </div>
                         <div id="weatherData" style="display: none;">
                             <div class="mb-3 text-center">
@@ -65,8 +75,9 @@
                                 </div>
                             </div>
                         </div>
+                        <!-- <div id="forecastData" > -->
                         <div id="forecastData" style="display: none;">
-                            <h3 class="mt-4">5-Day Forecast</h3>
+                            <h3 class="mt-4 text-center">5-Day Forecast</h3>
                             <div id="forecastCards" class="row mt-3"></div>
                         </div>
                     </div>
@@ -76,5 +87,4 @@
     </div>
     <script src="script.js"></script>
 </body>
-
 </html>
