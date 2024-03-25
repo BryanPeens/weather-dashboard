@@ -94,3 +94,13 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
   
+
+  //// get search option when clicked
+  const searchOption = document.getElementById("search-options");
+
+  searchOption.addEventListener("click", (event) => {
+    console.log(event.target.innerHTML);
+    const clickedLine = event.target.innerHTML
+    // Update the value of the input, with the value from the clicked line / list option selected
+    locationInput.value = clickedLine;
+  });
