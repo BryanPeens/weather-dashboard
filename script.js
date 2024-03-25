@@ -1,14 +1,14 @@
 // This event listener ensures that the JavaScript code inside it runs 
 // only after the DOM (Document Object Model) has been fully loaded.
 document.addEventListener("DOMContentLoaded", () => {
-    // These lines retrieve references to various elements in the HTML document
+    // These lines retrieve references to various elements in the index.html document
     const locationInput = document.getElementById("locationInput");
-    const searchButton = document.getElementById("searchButton");
+    const searchButton = document.getElementById("search-button");
     const weatherData = document.getElementById("weatherData");
     const forecastData = document.getElementById("forecastData");
     const forecastCards = document.getElementById("forecastCards");
   
-    // This is the API key required to access the OpenWeatherMap API.
+    // This is the API key required to access the OpenWeatherMap API. (Move to .env file hmmm...)
     const apiKey = "140cfd054be5e2fd76e0b0d383efacad";
   
     // This event listener is triggered when the search button is clicked.
@@ -66,11 +66,6 @@ document.addEventListener("DOMContentLoaded", () => {
             const forecastCard = document.createElement("div");
             forecastCard.classList.add("col-lg-6", "col-md-3", "mb-3");
 
-            // console.log("Temp : " + forecast.main.temp.toFixed() + " " + "°C");
-            // console.log("Wind : " + forecast.wind.speed.toFixed() + " " + "MPH");
-            // console.log("Humidity : " + forecast.main.humidity + " " + "%");
-            // console.log("Forecast Day : " + forecastDateTime.toLocaleDateString("en-US", { weekday: "long" }));
-
             forecastCard.innerHTML = `
               <div class="card bg-secondary text-light">
                 <div class="card-body">
@@ -94,13 +89,31 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
   
-
-  //// get search option when clicked
+  //// Get search option when clicked
   const searchOption = document.getElementById("search-options");
+  const showHide = document.getElementById("show-options");
 
   searchOption.addEventListener("click", (event) => {
     console.log(event.target.innerHTML);
-    const clickedLine = event.target.innerHTML
-    // Update the value of the input, with the value from the clicked line / list option selected
+    const clickedLine = event.target.innerHTML;
+    // Update the value of the input, with the value from the clicked item / list option selected
     locationInput.value = clickedLine;
+    // Make the search list hidden, to make room for 5 day forecast section after an item is clicked
+    searchOption.style.visibility = "hidden";
+    searchOption.style.height = "0px";
+  });
+
+
+  // Show and hide list if visible or hidden
+  showHide.addEventListener("click", (event) => {
+    if (searchOption.style.visibility === "hidden") {
+        // Show if hidden
+        searchOption.style.visibility = "visible";
+        searchOption.style.height = "100%";
+    }
+    else{
+        // Hide if not hidden
+        searchOption.style.visibility = "hidden";
+        searchOption.style.height = "0px";
+    }
   });

@@ -28,10 +28,19 @@
                         <div class="mb-3">
                             <h2 class="text-center" >Search Weather By City Name</h2>
                             <input id="locationInput" class="form-control" placeholder="Enter Location / City" type="text">
-                            <button id="searchButton" class="w-100 btn btn-primary mt-2" type="button">
-                                <i class="bi bi-search"></i> <!-- Bootstrap Search Icon -->
-                                Search
+
+                            <button id="search-button" type="button" class="btn btn-primary btn-sm mt-2 w-50">
+                                <i class="bi bi-search h5"><!-- Bootstrap Search Icon -->
+                                    Search
+                                </i> 
                             </button>
+
+                            <button id="show-options" type="button" class="btn btn-secondary btn-sm mt-2 w-25">
+                                <i class="bi bi-card-list h5"><!-- Bootstrap Search Icon -->                                
+                                    Show List
+                                </i> 
+                            </button>
+
                             <div id="search-options" class="list-group mt-3 text-center">
                                 <a href="#" id="atlanta" class="list-group-item list-group-item-action">Atlanta</a>
                                 <a href="#" id="denver" class="list-group-item list-group-item-action mt-2">Denver</a>
@@ -75,7 +84,6 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- <div id="forecastData" > -->
                         <div id="forecastData" style="display: none;">
                             <h3 class="mt-4 text-center">5-Day Forecast</h3>
                             <div id="forecastCards" class="row mt-3"></div>
