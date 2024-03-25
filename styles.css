@@ -1,3 +1,13 @@
 *{
   /* border: 1px solid red; */
 }
+.card{
+  /* border: 1px solid red; */
+}
+.card-body{
+  /* border: 1px solid red; */
+}
+
+.tiny-margin{
+  margin-right: 5px;
+}

@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
           const { name, main, weather, wind } = data;
           // Updates the HTML elements with the retrieved weather information.
           document.getElementById("locationName").textContent = name;
-          document.getElementById("temperature").textContent = `${main.temp.toFixed()} °C`;
+          document.getElementById("temperature").textContent = `${main.temp.toFixed()} °C`; 
           document.getElementById("weatherDescription").textContent = weather[0].description;
           document.getElementById("feelsLike").textContent = `${main.feels_like.toFixed()} °C`;
           document.getElementById("humidity").textContent = `${main.humidity} %`;
@@ -43,11 +43,11 @@ document.addEventListener("DOMContentLoaded", () => {
       // Fetches 5-day forecast data from the OpenWeatherMap API.
       fetch(forecastUrl)
         .then((response) => response.json())
-// The data parameter represents the response received from the OpenWeatherMap API after making a 
-// successful HTTP request using the fetch() method. This response typically contains JSON-formatted 
-// weather data, including information such as temperature, humidity, wind speed, and weather descriptions.
-// The data parameter is used as input to the callback function defined within the .then() method. Within this function, 
-// the code processes and extracts relevant information from the data object to update the weather display on the webpage.
+        // The data parameter represents the response received from the OpenWeatherMap API after making a 
+        // successful HTTP request using the fetch() method. This response typically contains JSON-formatted 
+        // weather data, including information such as temperature, humidity, wind speed, and weather descriptions.
+        // The data parameter is used as input to the callback function defined within the .then() method. Within this function, 
+        // the code processes and extracts relevant information from the data object to update the weather display on the webpage.
         .then((data) => {
           // Extracts the list of forecasted data points.
           const forecastList = data.list;
@@ -60,19 +60,21 @@ document.addEventListener("DOMContentLoaded", () => {
             // Creates HTML structure for each forecast card.
             const forecastCard = document.createElement("div");
             forecastCard.classList.add("col-lg-6", "col-md-3", "mb-3");
+
+            // console.log("Temp : " + forecast.main.temp.toFixed() + " " + "°C");
+            // console.log("Wind : " + forecast.wind.speed.toFixed() + " " + "MPH");
+            // console.log("Humidity : " + forecast.main.humidity + " " + "%");
+            // console.log("Forecast Day : " + forecastDateTime.toLocaleDateString("en-US", { weekday: "long" }));
+
             forecastCard.innerHTML = `
               <div class="card">
                 <div class="card-body">
-                  <h5 class="card-title">${forecastDateTime.toLocaleDateString(
-                    "en-US",
-                    { weekday: "long" }
-                  )}</h5>
-                  <p class="card-text">${forecastDateTime.toLocaleTimeString(
-                    "en-US",
-                    { hour: "numeric" }
-                  )}</p>
-                  <p class="card-text">${forecast.main.temp.toFixed()}°C</p>
-                  <p class="card-text">${forecast.weather[0].description}</p>
+                  <h5 class="card-title">${forecastDateTime.toLocaleDateString("en-US",{ weekday: "long" })} ${forecastDateTime.toLocaleDateString({ weekday: "long" })}</h5>
+                  <p class="card-text">Forecast Time : ${forecastDateTime.toLocaleTimeString("en-US",{ hour: "numeric" })}</p>
+                  <p class="card-text">Temp : ${forecast.main.temp.toFixed()} °C</p>
+                  <p class="card-text">Wind speed : ${forecast.wind.speed.toFixed()} MPH</p>
+                  <p class="card-text">Humidity : ${forecast.main.humidity} %</p>
+                  <p class="card-text">Expected : ${forecast.weather[0].description}</p>
                 </div>
               </div>
             `;

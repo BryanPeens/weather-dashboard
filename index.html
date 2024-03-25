@@ -14,45 +14,53 @@
 </head>
 
 <body>
+    <header class="bg-primary">
+        <ul class="nav justify-content-center pt-3">
+            <li class="nav-item">
+                <h1>Weather Dashboard</h1>
+            </li>
+        </ul>
+    </header>
     <div class="container">
         <div class="row mt-5">
             <div class="col-lg-6 offset-lg-3">
                 <div class="card">
                     <div class="card-body">
                         <div class="mb-3">
-                            <input id="locationInput" class="form-control" placeholder="Enter Location" type="text">
-                            <button id="searchButton" class="btn btn-primary mt-2">
+                            <input id="locationInput" class="form-control" placeholder="Enter Location / City" type="text">
+                            <button id="searchButton" class="w-100 btn btn-primary mt-2" type="button">
                                 <i class="bi bi-search"></i> <!-- Bootstrap Search Icon -->
                                 Search
                             </button>
                         </div>
                         <div id="weatherData" style="display: none;">
-                            <div class="mb-3">
-                                <h2 id="locationName" class="card-title"></h2>
+                            <div class="mb-3 text-center">
+                                <h2 id="locationName" class="card-title "></h2>
                             </div>
-                            <div class="mb-3">
+                            <div class="mb-3 text-center">
                                 <h1 id="temperature" class="card-text"></h1>
                             </div>
-                            <div class="mb-3">
+                            <div class="mb-3 text-center">
                                 <p id="weatherDescription" class="card-text"></p>
                             </div>
                             <div class="row">
                                 <div class="col">
                                     <div class="mb-3">
                                         <p id="feelsLike" class="card-text "></p>
-                                        <p class="card-text"><i class="bi bi-thermometer-sun"></i>Feels Like</p>
+                                        <p class="card-text"><i class="bi bi-thermometer-sun tiny-margin"></i>Feels Like
+                                        </p>
                                     </div>
                                 </div>
                                 <div class="col">
                                     <div class="mb-3">
                                         <p id="humidity" class="card-text bold"></p>
-                                        <p class="card-text"><i class="bi bi-moisture"></i>Humidity</p>
+                                        <p class="card-text"><i class="bi bi-moisture tiny-margin"></i>Humidity</p>
                                     </div>
                                 </div>
                                 <div class="col">
                                     <div class="mb-3">
                                         <p id="windSpeed" class="card-text bold"></p>
-                                        <p class="card-text "><i class="bi bi-wind"></i>Wind Speed</p>
+                                        <p class="card-text "><i class="bi bi-wind tiny-margin"></i>Wind Speed</p>
                                     </div>
                                 </div>
                             </div>
