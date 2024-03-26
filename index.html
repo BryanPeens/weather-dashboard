@@ -29,19 +29,19 @@
                             <h2 class="text-center" >Search Weather By City Name</h2>
                             <input id="locationInput" class="form-control" placeholder="Enter Location / City" type="text">
 
-                            <button id="search-button" type="button" class="btn btn-primary btn-sm mt-2 w-50">
+                            <button id="search-button" type="button" class="btn btn-primary btn-sm mt-2 w-100">
                                 <i class="bi bi-search h5"><!-- Bootstrap Search Icon -->
                                     Search
                                 </i> 
                             </button>
 
-                            <button id="show-options" type="button" class="btn btn-secondary btn-sm mt-2 w-25">
+                            <button id="show-options" type="button" class="btn btn-secondary btn-sm mt-2 w-100">
                                 <i class="bi bi-card-list h5"><!-- Bootstrap Search Icon -->                                
-                                    Show List
+                                    Show History
                                 </i> 
                             </button>
-
-                            <div id="search-options" class="list-group mt-3 text-center">
+                            <!-- This is here, but gets replaced with data from script -->
+                            <div id="search-history" class="list-group mt-3 text-center">
                                 <a href="#" id="atlanta" class="list-group-item list-group-item-action">Atlanta</a>
                                 <a href="#" id="denver" class="list-group-item list-group-item-action mt-2">Denver</a>
                                 <a href="#" id="seatle" class="list-group-item list-group-item-action mt-2">Seatle</a>
@@ -84,6 +84,7 @@
                                 </div>
                             </div>
                         </div>
+                        <!-- Display section for 5 day forecast -->
                         <div id="forecastData" style="display: none;">
                             <h3 class="mt-4 text-center">5-Day Forecast</h3>
                             <div id="forecastCards" class="row mt-3"></div>
